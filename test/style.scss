@@ -1,11 +1,14 @@
 /* Variables */
 
 $navbar_color:#2090f9;
+
 body {
     header {
+        height: 100vh;
+
         nav {
             background-color: #333333;
-            min-height: 100px;
+
             //Logo
             .navbar-brand {
                 background-color: $navbar_color;
@@ -14,6 +17,7 @@ body {
                 padding: 10px 15px 10px 15px;
                 border-radius: 10px;
             }
+
             //Barre de recherche
             form {
                 input {
@@ -22,11 +26,13 @@ body {
                     border: 1px solid rgba(0, 0, 0, 0);
                     border-radius: 5px;
                     margin-right: 10px;
+
                     &:focus {
                         border: 1.5px solid $navbar_color;
                         border-radius: 5px;
                     }
                 }
+
                 button {
                     margin-left: 0;
                     border-color: $navbar_color;
@@ -34,22 +40,27 @@ body {
                     background-color: rgba(0, 0, 0, 0);
                     width: 40px;
                     height: 40px;
+
                     i {
                         color: $navbar_color;
                         font-size: 20px;
                     }
+
                     &:hover {
                         border-color: white;
+
                         i {
                             color: white;
                         }
                     }
                 }
             }
+
             //Menus
             #navbar_collapse {
                 display: flex;
                 justify-content: flex-end;
+
                 ul {
                     li {
                         a {
@@ -58,36 +69,45 @@ body {
                             flex-direction: column;
                             align-items: center;
                             color: white;
+
                             i {
                                 font-size: 40px;
                             }
+
                             p {
                                 text-align: center;
                             }
+
                             &:hover {
                                 color: $navbar_color;
                             }
                         }
                     }
                 }
+
                 //User
                 #user_login {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+
                     i {
                         font-size: 40px;
                         color: white;
                     }
+
                     a {
                         color: white;
+
                         &:hover {
                             color: $navbar_color;
+
                             i {
                                 color: $navbar_color;
                             }
                         }
                     }
+
                     .dropdown-menu {
                         form {
                             margin: 20px 10px 20px 10px;
@@ -98,21 +118,25 @@ body {
                             flex-direction: column;
                             align-items: center;
                             justify-content: space-between;
+
                             input {
                                 height: 40px;
                                 padding-left: 5px;
                                 padding-right: 5px;
                                 border: 1px solid #333333;
                                 border-radius: 5px;
+
                                 &:focus {
                                     border: 1.5px solid $navbar_color;
                                     border-radius: 5px;
                                 }
                             }
+
                             button {
                                 width: 70px;
                                 background-color: $navbar_color;
                                 border: 1.5px solid rgba(0, 0, 0, 0);
+
                                 &:hover {
                                     color: $navbar_color;
                                     border: 1px solid rgba(0, 0, 0, 0);
@@ -125,7 +149,8 @@ body {
                 }
             }
         }
-        #header_background {
+
+        #header_content {
             .container {
                 min-height: 520px;
                 display: flex;
@@ -135,6 +160,7 @@ body {
                 padding-top: 80px;
                 padding-bottom: 50px;
                 color: white;
+
                 a {
                     background-color: rgba(0, 0, 0, 0);
                     border: 1.5px solid $navbar_color;
@@ -144,6 +170,7 @@ body {
                     color: $navbar_color;
                     text-align: center;
                     font-size: 20px;
+
                     &:hover {
                         background-color: $navbar_color;
                         color: white;
@@ -152,5 +179,12 @@ body {
                 }
             }
         }
+    }
+
+    /* ------------------------------------------------------------------------------- SECTION CAROUSSEL */
+
+    #carrousel {
+        height: 100vh;
+        background-color: cadetblue;
     }
 }
