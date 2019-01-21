@@ -1,0 +1,62 @@
+#contact {
+  background: #c0c6ce;
+  text-align: center;
+}
+#contact h1 {
+  font-family: sans-serif;
+  padding-top: 25px;
+  color: dimgrey;
+}
+
+form .input {
+  font-style: italic;
+}
+form input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 20%;
+  height: 25px;
+}
+form input:focus {
+  outline-color: #f19c00;
+}
+form textarea {
+  width: 20%;
+  margin-top: 10px;
+}
+form textarea:focus {
+  outline-color: #f19c00;
+}
+form #btn {
+  margin-bottom: 25px;
+  margin-top: 25px;
+  background: #00d208fa;
+  color: white;
+  width: 21%;
+  border: 1px solid;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+form span {
+  color: #e25500;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.errorMsg {
+  list-style: none;
+  color: orangered;
+  display: none;
+}
+
+.ok {
+  border: 2px solid green;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+/*# sourceMappingURL=style.css.map */
