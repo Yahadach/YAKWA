@@ -1,8 +1,18 @@
 /* Variables */
 
+@font-face {
+    font-family: "Josefin";
+    src: url("fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
+}
+
 $navbar_color:#2090f9;
+$black1: #333333;
 
 body {
+    section {
+        height: 100vh;
+    }
+
     header {
         height: 100vh;
 
@@ -183,8 +193,76 @@ body {
 
     /* ------------------------------------------------------------------------------- SECTION CAROUSSEL */
 
-    #carrousel {
+    #carousel {
         height: 100vh;
-        background-color: cadetblue;
+        background-color: $black1;
+        h2 {
+            text-align: center;
+            color: white;
+            padding-top: 10vh;
+        }
+        .carousel-inner {
+            .carousel_container {
+                width: 100vw;
+                height: 80vh;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding-left: 10vw;
+                padding-right: 10vw;
+                .carousel_movie {
+                    height: 500px;
+                    width: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .carousel_movie_title {
+                        text-align: center;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    #about {
+        background-color: goldenrod;
+
+        #title-about {
+            padding-top: 50px;
+
+            h2 {
+                font-family: "Josefin";
+                font-size: 60px;
+            }
+        }
+
+        #title-description {
+            padding-top: 130px;
+            p {
+                font-size: 25px;
+            }
+        }
+
+        #title-buttons{
+            padding-top: 100px;
+            .col-lg-6{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                button{
+                    min-height: 60px;
+                    border-radius: 0;
+                    border-width: 3px;
+                    border-color: #333333;
+                }
+            }
+        }
+    }
+
+    footer{
+        height: 25vh;
+        background-color: #333333;
     }
 }
