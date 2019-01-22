@@ -1,6 +1,4 @@
-{% extends "layout.html.twig" %} 
-{% block title %}{{ titre }}{% endblock %} 
-{% block content %}
+{% extends "base.html.twig" %} {% for element in movieData %} {% block title %}{{ element.titre }}{% endblock %} {% endfor %} {% block content %}
 <h1>{{titre|upper}}</h1>
 <div id="movie_bloc">
     <div id="affiche_bloc">{{affiche}}</div>
