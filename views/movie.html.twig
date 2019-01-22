@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %} 
+{% block title %}{{ titre }}{% endblock %} 
+{% block content %}
+<h1>{{titre|upper}}</h1>
+<div id="movie_bloc">
+    <div id="affiche_bloc">{{affiche}}</div>
+    <div id="description_bloc">
+        <ul id="description_list>
+                <li class=" description_element ">Date : {{date}}</li>
+                <li class="description_element ">Réalisateur(s) : {{realisateur}}</li>
+                <li class="description_element ">Acteur(s) : {{acteurs}}</li>
+                <li class="description_element ">Synopsis : {{description}}</li>
+            </ul>
+        </div>
+        </div>
+        </div>
+{% endblock %}
