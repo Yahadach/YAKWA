@@ -1,8 +1,12 @@
-{% extends "base.html.twig" %} {% block title %}YAKWA{% endblock %} {% block header %} {{ parent() }}
+{% extends "base.html.twig" %} {% block title %}YAKWA{% endblock %} {% block header %} 
+{{ parent() }}
 <div class="row" id="header_content">
     <div class="container">
         <img src="public/img/yakwaLogoTest.png" alt="logo yakwa" width="400px" height="160px">
         <h1>Phrase d'accroche. Bla bla bla bla bla bla bla bla bla bla bla...</h1>
+        {% if babar == 'Salut' %}
+            <h2>Salut!</h2>
+        {% endif %}
         <a href="#">Trouver un Film</a>
     </div>
 </div>

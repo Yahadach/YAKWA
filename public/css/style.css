@@ -6,34 +6,28 @@
 body {
   /* ------------------------------------------------------------------------------- SECTION CAROUSSEL */
 }
-body section {
-  height: 100vh;
-}
-body header {
-  height: 100vh;
-}
-body header nav {
+body nav {
   background-color: #333333;
 }
-body header nav .navbar-brand {
+body nav .navbar-brand {
   background-color: #2090f9;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px 15px 10px 15px;
   border-radius: 10px;
 }
-body header nav form input {
+body nav form input {
   height: 40px;
   max-width: 250px;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
   margin-right: 10px;
 }
-body header nav form input:focus {
+body nav form input:focus {
   border: 1.5px solid #2090f9;
   border-radius: 5px;
 }
-body header nav form button {
+body nav form button {
   margin-left: 0;
   border-color: #2090f9;
   border-radius: 5px;
@@ -41,55 +35,55 @@ body header nav form button {
   width: 40px;
   height: 40px;
 }
-body header nav form button i {
+body nav form button i {
   color: #2090f9;
   font-size: 20px;
 }
-body header nav form button:hover {
+body nav form button:hover {
   border-color: white;
 }
-body header nav form button:hover i {
+body nav form button:hover i {
   color: white;
 }
-body header nav #navbar_collapse {
+body nav #navbar_collapse {
   display: flex;
   justify-content: flex-end;
 }
-body header nav #navbar_collapse ul li a {
+body nav #navbar_collapse ul li a {
   width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
 }
-body header nav #navbar_collapse ul li a i {
+body nav #navbar_collapse ul li a i {
   font-size: 40px;
 }
-body header nav #navbar_collapse ul li a p {
+body nav #navbar_collapse ul li a p {
   text-align: center;
 }
-body header nav #navbar_collapse ul li a:hover {
+body nav #navbar_collapse ul li a:hover {
   color: #2090f9;
 }
-body header nav #navbar_collapse #user_login {
+body nav #navbar_collapse #user_login {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-body header nav #navbar_collapse #user_login i {
+body nav #navbar_collapse #user_login i {
   font-size: 40px;
   color: white;
 }
-body header nav #navbar_collapse #user_login a {
+body nav #navbar_collapse #user_login a {
   color: white;
 }
-body header nav #navbar_collapse #user_login a:hover {
+body nav #navbar_collapse #user_login a:hover {
   color: #2090f9;
 }
-body header nav #navbar_collapse #user_login a:hover i {
+body nav #navbar_collapse #user_login a:hover i {
   color: #2090f9;
 }
-body header nav #navbar_collapse #user_login .dropdown-menu form {
+body nav #navbar_collapse #user_login .dropdown-menu form {
   margin: 20px 10px 20px 10px;
   padding: 0;
   width: 300px;
@@ -99,29 +93,48 @@ body header nav #navbar_collapse #user_login .dropdown-menu form {
   align-items: center;
   justify-content: space-between;
 }
-body header nav #navbar_collapse #user_login .dropdown-menu form input {
+body nav #navbar_collapse #user_login .dropdown-menu form input {
   height: 40px;
   padding-left: 5px;
   padding-right: 5px;
   border: 1px solid #333333;
   border-radius: 5px;
 }
-body header nav #navbar_collapse #user_login .dropdown-menu form input:focus {
+body nav #navbar_collapse #user_login .dropdown-menu form input:focus {
   border: 1.5px solid #2090f9;
   border-radius: 5px;
 }
-body header nav #navbar_collapse #user_login .dropdown-menu form button {
+body nav #navbar_collapse #user_login .dropdown-menu form button {
   width: 70px;
   background-color: #2090f9;
   border: 1.5px solid rgba(0, 0, 0, 0);
 }
-body header nav #navbar_collapse #user_login .dropdown-menu form button:hover {
+body nav #navbar_collapse #user_login .dropdown-menu form button:hover {
   color: #2090f9;
   border: 1px solid rgba(0, 0, 0, 0);
   background-color: white;
   border: 1.5px solid #2090f9;
 }
-body header #header_content .container {
+body #inscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(50, 50, 50, 0.8);
+  margin-top: 200px;
+}
+body #inscription input {
+  width: 200px;
+  margin: 20px;
+  padding: 13px;
+  border-radius: 5px;
+}
+body section {
+  height: 100vh;
+}
+body #header_background {
+  height: 100vh;
+}
+body #header_background #header_content .container {
   min-height: 520px;
   display: flex;
   flex-direction: column;
@@ -131,7 +144,7 @@ body header #header_content .container {
   padding-bottom: 50px;
   color: white;
 }
-body header #header_content .container a {
+body #header_background #header_content .container a {
   background-color: rgba(0, 0, 0, 0);
   border: 1.5px solid #2090f9;
   height: 40px;
@@ -141,7 +154,7 @@ body header #header_content .container a {
   text-align: center;
   font-size: 20px;
 }
-body header #header_content .container a:hover {
+body #header_background #header_content .container a:hover {
   background-color: #2090f9;
   color: white;
   text-decoration: none;
@@ -204,6 +217,42 @@ body #about #title-buttons .col-lg-6 button {
   border-radius: 0;
   border-width: 3px;
   border-color: #333333;
+}
+body #allMovies {
+  min-height: 100vh;
+  background-color: #7e7e7e;
+  margin: 0;
+  padding: 0;
+}
+body #allMovies #movie_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5vh 0 5vh 0;
+  margin-bottom: 0;
+}
+body #allMovies #movie_list .movie_item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5vh;
+}
+body #allMovies #movie_list .movie_item .movie_affiche {
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+body #allMovies #movie_list .movie_item .movie_affiche:hover {
+  box-shadow: 3px 3px 5px black;
+}
+body #allMovies #movie_list .movie_item .movie_title {
+  text-align: center;
+  margin-top: 2vh;
+  color: white;
+  font-size: 20px;
+}
+body #allMovies #movie_list .movie_item .movie_title:hover {
+  text-decoration: none;
+  text-shadow: 3px 3px 3px black;
 }
 body footer {
   height: 25vh;

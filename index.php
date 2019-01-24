@@ -1,40 +1,62 @@
 <?php
 
+require("models/twig.php");
+
 $uri = $_SERVER['REQUEST_URI'];
+$uriExplode = explode( "/" , $uri);
+$id=$uriExplode[1];
 
-switch($uri){
+session_start();
 
-    case "/" :
+switch($id){
+
+    case "":
+    header('Location: /home');
+    break;
+
+    case "home":
+        include "controllers/HOME.php";
+        getHome();
+    break;
+
+    case "connexion" :
         include "controllers/userController.php";
-            verifUser();
-        break;
+        verifConnexion($twig);
+    break;
 
-    case "/YAKWA/babar" :
+    case "deconnexion" :
         include "controllers/userController.php";
-            verifUser();
-        break;
-        
-        
-    case "/films":
+        include "controllers/HOME.php";
+        deleteSession();
+        getHome();
+    break;
+
+    case "proposer":
+        include "controllers/userController.php";
+        getSession($twig);
+    break;
+
+    case "inscription":
+        include "controllers/userController.php";
+        register($twig);
+    break;
+
+    case "process":
+        include "controllers/userController.php";
+        include "controllers/HOME.php";
+        createUser();
+        getHome();
+    break;
+
+    case "films":
         include "controllers/filmsControler.php";
-        getFilms();
-        break;
-    
-    case "/toto":
-        echo "Connaissez vous la dernière blague de toto?";
-        break;
-        
-    case "/login":
-        include "controllers/filmsControler.php";
-        login();
-        break;
-        
+        getFilms($twig);
+    break;
+
+
     default :
-            require_once 'vendor/autoload.php';
-            $loader = new Twig_Loader_Filesystem('views');
-            $twig = new Twig_Environment($loader);   
-    
-            echo $twig->render('accueil.html.twig');
+        header('Location: /home');
+    exit;
     
         
         

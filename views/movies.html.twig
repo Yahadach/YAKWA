@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %} {% block title %}FILMS{% endblock %} {% block body %}
+<header class="container-fluid">{% block header %} {{ parent() }} {% endblock %} </header>
+{% block content %}
+<div id="allMovies" class="container-fluid">
+    <div class="container">
+        <ul id="movie_list">
+            {% for film in films %}
+            <li class="movie_item">
+                <a href="film/{{film.id}}">
+                    <div class="movie_affiche" style="background-image: url('public/img/affiches/{{film.id}}.jpg')"></div>
+                </a>
+                <a class="movie_title" href="film/{{film.id}}">{{film.titre}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %} {% block footer %} {{ parent() }} {% endblock %} {% endblock %}

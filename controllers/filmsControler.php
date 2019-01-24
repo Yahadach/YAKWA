@@ -1,6 +1,6 @@
 <?php
 
-function getUsers(){
+function getFilm($twig){
     
    try{
 $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
@@ -8,15 +8,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
 catch(Exception $e){
 die('Erreur : '.$e->getMessage());
 }
+
+    $Request = $pdo->query("SELECT * FROM films");
     
-    require_once 'vendor/autoload.php';
-$loader = new Twig_Loader_Filesystem('views');
-$twig = new Twig_Environment($loader);
-    
-    
-    $Request = $pdo->query("SELECT * FROM users");
-    
-    echo $twig->render('accueil.html.twig', [
+    echo $twig->render('movie.html.twig', [
         'users' => $Request,
         'babar' => "Ca trompe énormément",
         'numéro' => "1"
@@ -24,38 +19,14 @@ $twig = new Twig_Environment($loader);
     
 }
 
-
-function getFilms(){
+function getFilms($twig){
        try{
            $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
        }
 catch(Exception $e){
 die('Erreur : '.$e->getMessage());
 }
-    
-    require_once 'vendor/autoload.php';
-$loader = new Twig_Loader_Filesystem('views');
-$twig = new Twig_Environment($loader);
-    
-    
-    $test = $pdo->query("SELECT * FROM films");
-    echo $twig->render('accueil.html.twig', ['films' => $test]);
-}
 
-function login(){
-       try{
-           $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-       }
-catch(Exception $e){
-die('Erreur : '.$e->getMessage());
+    $allMovies = $pdo->query("SELECT * FROM films")->fetchAll();
+    echo $twig->render('movies.html.twig', ['films' => $allMovies]);
 }
-    
-    require_once 'vendor/autoload.php';
-$loader = new Twig_Loader_Filesystem('views');
-$twig = new Twig_Environment($loader);
-    
- 
-    echo $twig->render('accueil.html.twig', ['resultatLogin' => $test]);
-}
-
-?>
