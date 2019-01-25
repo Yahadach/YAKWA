@@ -1,5 +1,5 @@
-$bgColor : #c0c6ce;
-$btnColor:#00d208fa;
+$bgColor : #7e7e7e;
+$btnColor:#ad8823fa;
 
 #contact {
     background: $bgColor;
@@ -8,7 +8,8 @@ $btnColor:#00d208fa;
     h1 {
         font-family: sans-serif;
         padding-top: 25px;
-        color: dimgrey;
+        color: #fff;
+        text-transform: uppercase;
     }
 }
 
@@ -18,10 +19,7 @@ form {
     }
 
     input {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 20%;
-        height: 25px;
+        width: 200px;
 
         &:focus {
             outline-color: #f19c00;
@@ -29,7 +27,7 @@ form {
     }
 
     textarea {
-        width: 20%;
+        width: 200px;
         margin-top: 10px;
 
         &:focus {
@@ -37,20 +35,13 @@ form {
         }
     }
 
-    #btn {
-        margin-bottom: 25px;
-        margin-top: 25px;
-        background: $btnColor;
-        color: white;
-        width: 21%;
-        border: 1px solid;
-        height: 30px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
+    a {
+        text-decoration:none;
+        color:#FFF;
+      }
+    
     span {
-        color: #e25500;
+        color: #dd0000;
         font-family: sans-serif;
         font-weight: bold;
         font-style: italic;
@@ -58,12 +49,12 @@ form {
 }
 .errorMsg{
     list-style: none;
-    color: orangered;
+    color: #dd0000;
     display: none;
 }
 .ok{
-    border:2px solid green;
+    border:2px solid #3399ff;
 }
 .error{
-    border:2px solid red;
+    border:2px solid #dd0000;
 }

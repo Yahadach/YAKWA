@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <title>AJOUTEZ VOTRE FILM</title>
+    <title>Ajoutez votre film</title>
 </head>
 <!-- CE QUI NOUS INTERESSE COMMENCE ICI dans le body -->
 
