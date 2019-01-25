@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+{% block form %}
+<form id="inscription" class="row" method="post" action="processAdd">
+
+    <!-- Titre-->
+    <input type="text" name="titre" class="input" minlenght="2" maxlength="20" placeholder="Titre du films*" value="{{inputs.titre}}" required><br><br>
+        <span> {{ errorExist }} </span>
+
+    <!-- année -->
+    <input type="text" name="annee" class="input" minlenght="2" maxlength="20" placeholder="Année*" value="{{inputs.annee}}" required><br><br>
+        <span> {{ errorAnnee }} </span>
+    <!-- genre -->
+    <input type="text" name="genre" class="input" minlenght="2" maxlength="20" placeholder="Genre*" value="{{inputs.genre}}" required><br><br>
+        <span> {{ errorGenreMessage }} </span>
+
+
+    <!-- Realisateur -->
+    <input type="text" name="realisateurs" class="input" minlenght="2" maxlength="20" placeholder="Realisateur*" value="{{inputs.realisateurs}}" required><br><br>
+        <span> {{ errorRealisateursMessage }} </span>
+
+
+    <!-- Acteur -->
+    <input type="text" name="acteurs" class="input" minlenght="2" maxlength="20" placeholder="Acteur*" value="{{inputs.acteurs}}" required><br><br>
+        <span> {{ error }} </span>
+
+
+    <!-- Synopsis-->
+    <input type="textarea" name="synopsis" class="input" minlenght="2" maxlength="20" placeholder="Synopsis*" value="{{inputs.synopsis}}" required><br><br>
+
+        <input type="submit" id="btn" value="Envoyer">
+    </form>
+{% endblock %}

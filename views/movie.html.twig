@@ -1,15 +1,37 @@
-{% extends "base.html.twig" %} {% for element in movieData %} {% block title %}{{ element.titre }}{% endblock %} {% endfor %} {% block content %}
-<h1>{{titre|upper}}</h1>
-<div id="movie_bloc">
-    <div id="affiche_bloc">{{affiche}}</div>
-    <div id="description_bloc">
-        <ul id="description_list>
-                <li class=" description_element ">Date : {{date}}</li>
-                <li class="description_element ">Réalisateur(s) : {{realisateur}}</li>
-                <li class="description_element ">Acteur(s) : {{acteurs}}</li>
-                <li class="description_element ">Synopsis : {{description}}</li>
-            </ul>
+{% extends "base.html.twig" %} {% block title %} {{ film.titre }}{% endblock %} {% block body%}
+<header class="container-fluid">{% block header %} {{ parent() }} {% endblock %} </header>
+{% block content %}
+<div id="movie_container" class="container-fluid" style="background-image: url('/public/img/photos/{{film.id}}.jpg')">
+    <div id="movie_block" class="container">
+        <div class="row" id="title_block">
+            <h1>{{film['titre']}}</h1>
         </div>
+        <div class="row">
+            <div id="affiche_block" class="col-5">
+                <img class="img-fluid" src="/public/img/affiches/{{film.id}}.jpg" alt="{{film['titre']}}">
+            </div>
+            <div id="description_block" class="col-7">
+                <ul id="description_list">
+                    <li class="description_item"><strong>Année :</strong> {{ film.annee }} </li>
+
+                    <li class="description_item">
+                        <strong>Genre(s) :</strong> {% for genre in genres %} {{ genre.nom }}. {% endfor %}
+                    </li>
+
+                    <li class="description_item"><strong>Synopsis :</strong> <br> {{ film.synopsis }}</li>
+
+                    <li class="description_item">
+                        <strong>Réalisateur(s) :</strong> {% for real in reals %} {{ real.nom }}. {% endfor %}
+                    </li>
+
+                    <li class="description_item">
+                        <strong>Acteur(s) :</strong> {% for actor in actors %} {{ actor.nom }}. {% endfor %}
+                    </li>
+
+                </ul>
+            </div>
         </div>
-        </div>
-{% endblock %}
+    </div>
+</div>
+
+{% endblock %} {% block footer %} {{ parent() }} {% endblock %} {% endblock %}

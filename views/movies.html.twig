@@ -6,10 +6,10 @@
         <ul id="movie_list">
             {% for film in films %}
             <li class="movie_item">
-                <a href="film/{{film.id}}">
+                <a href="films/{{film.id}}">
                     <div class="movie_affiche" style="background-image: url('public/img/affiches/{{film.id}}.jpg')"></div>
                 </a>
-                <a class="movie_title" href="film/{{film.id}}">{{film.titre}}</a></li>
+                <a class="movie_title" href="films/{{film.id}}">{{film.titre}}</a></li>
             {% endfor %}
         </ul>
     </div>

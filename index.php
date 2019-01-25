@@ -15,8 +15,8 @@ switch($id){
     break;
 
     case "home":
-        include "controllers/HOME.php";
-        getHome();
+    include "controllers/userController.php";
+    getSession($twig);
     break;
 
     case "connexion" :
@@ -33,7 +33,16 @@ switch($id){
 
     case "proposer":
         include "controllers/userController.php";
+        include "controllers/filmsControler.php";
+        registerMovie($twig);
         getSession($twig);
+    break;
+
+    case "processAdd":
+        include "controllers/userController.php";
+        include "controllers/filmsControler.php";
+        addMovie($twig);
+        //getSession($twig);
     break;
 
     case "inscription":
@@ -44,13 +53,24 @@ switch($id){
     case "process":
         include "controllers/userController.php";
         include "controllers/HOME.php";
-        createUser();
+        createUser($twig);
         getHome();
     break;
 
     case "films":
+        include "controllers/userController.php";
+
+        if(isset($uriExplode[2])) {
         include "controllers/filmsControler.php";
+        getFilm($twig,$uriExplode[2]);
+        //getSession($twig);
+        }
+        else {
+        include "controllers/filmsControler.php";
+        //getSession($twig);
         getFilms($twig);
+        //getSession($twig);
+        }
     break;
 
 
