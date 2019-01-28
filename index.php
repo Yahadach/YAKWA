@@ -35,7 +35,7 @@ switch($id){
         include "controllers/userController.php";
         include "controllers/filmsControler.php";
         registerMovie($twig);
-        getSession($twig);
+        //getSession($twig);
     break;
 
     case "processAdd":

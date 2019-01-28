@@ -138,6 +138,31 @@ body #inscription span {
   font-size: 20px;
   font-weight: bold;
 }
+body #movie-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(50, 50, 50, 0.8);
+  margin-top: 20px;
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+body #movie-form input {
+  width: 500px;
+  margin: 20px;
+  padding: 13px;
+  border-radius: 5px;
+}
+body #movie-form #btn {
+  text-align: center;
+}
+body #movie-form span {
+  color: crimson;
+  font-size: 20px;
+  font-weight: bold;
+}
 body #welcome {
   display: block;
   margin-left: auto;
