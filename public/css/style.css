@@ -214,7 +214,7 @@ body #search_message {
   margin-top: auto;
   text-align: center;
   color: white;
-  font-family: "josefin sans";
+  font-family: "josefin";
   margin-top: 20vh;
   font-size: 50px;
   background-color: rgba(50, 50, 50, 0.8);
@@ -231,7 +231,7 @@ body #result_search button {
   height: 9vh;
   border-width: 0.5vh;
   border-color: #333333;
-  font-family: "josefin sans";
+  font-family: "josefin";
   font-weight: bold;
 }
 body section {
@@ -270,7 +270,7 @@ body #carousel {
   background-color: #333333;
 }
 body #carousel h2 {
-  font-family: "josefin sans";
+  font-family: "josefin";
   text-align: center;
   color: white;
   padding-top: 10vh;
@@ -292,7 +292,7 @@ body #carousel .carousel-inner .carousel_container .carousel_movie {
   justify-content: space-between;
 }
 body #carousel .carousel-inner .carousel_container .carousel_movie .carousel_movie_title {
-  font-family: "josefin sans";
+  font-family: "josefin";
   font-weight: bold;
   font-size: 20px;
   text-align: center;
@@ -312,7 +312,7 @@ body #about #title-description {
   padding-top: 130px;
 }
 body #about #title-description p {
-  font-family: "josefin sans";
+  font-family: "josefin";
   font-size: 25px;
 }
 body #about #title-buttons {
@@ -324,7 +324,7 @@ body #about #title-buttons .col-lg-6 {
   justify-content: center;
 }
 body #about #title-buttons .col-lg-6 button {
-  font-family: "josefin sans";
+  font-family: "josefin";
   font-weight: bold;
   min-height: 65px;
   border-radius: 1;
@@ -380,7 +380,7 @@ body #movie_container #title_block {
   color: white;
 }
 body #movie_container #title_block h1 {
-  font-family: "josefin sans";
+  font-family: "josefin";
   font-size: 85px;
 }
 body #movie_container #movie_block {
