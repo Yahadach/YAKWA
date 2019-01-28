@@ -17,20 +17,21 @@
     {% block body %}
     <header class="container-fluid" id="header_background">
         {% block header %}
+
         <!-- Navbar -->
-        <nav class="row navbar navbar-expand-lg " id="navbar">
+        <nav class="row navbar navbar-expand-lg fixed-top" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="/home"><img src="/public/img/yakwaLogo.png" alt="logo" width="200px" height="80px"></a>
+                <a class="navbar-brand" href="/home"><img src="/public/img/yakwaLogoTest.png" alt="logo" width="100px" height="40px"></a>
                 <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_collapse" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="far fa-caret-square-down"></i>
                 </a>
                 <div class="collapse navbar-collapse" id="navbar_collapse">
 
                     <!--Barre de recherche -->
-                    <form class="form-inline my-2 my-lg-0">
-                        <input type="search" placeholder="Recherche" aria-label="Search">
+                    <span><form class="form-inline">
+                        <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
                         <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                    </form></span>
 
                     <!--Menus-->
                     <ul class="navbar-nav">

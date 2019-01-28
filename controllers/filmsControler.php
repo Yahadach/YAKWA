@@ -27,7 +27,7 @@ var_dump($Genre);
 function getFilms($twig){
     var_dump($_SESSION['user_name']);
 try{
-$pdo = new PDO('mysql:host=localhost;dbname=yakwa2;charset=utf8', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
 }
 catch(Exception $e){
 die('Erreur : '.$e->getMessage());
