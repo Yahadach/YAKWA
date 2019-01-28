@@ -73,6 +73,16 @@ switch($id){
         }
     break;
 
+    case "search":
+        include "controllers/filmsControler.php";
+        searchMovie($twig);
+    break;
+
+    case "random":
+        include "controllers/filmsControler.php";
+        randomMovie($twig);
+    break;
+
 
     default :
         header('Location: /home');

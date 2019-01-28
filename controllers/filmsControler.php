@@ -13,36 +13,56 @@ $Request = $pdo->query("SELECT * FROM films WHERE films.id = $Film_id" )->fetch(
 $Actors = $pdo->query("SELECT acteurs.nom FROM acteurs,films_acteurs WHERE films_acteurs.ID_Film = $Film_id AND acteurs.id=films_acteurs.ID_Acteur")->fetchAll();
 $Real = $pdo->query("SELECT realisateurs.nom FROM realisateurs,films_realisateurs WHERE films_realisateurs.ID_Film = $Film_id AND realisateurs.id=films_realisateurs.ID_Realisateur")->fetchAll();
 $Genre = $pdo->query("SELECT genres.nom FROM genres,films_genres WHERE films_genres.ID_Film = $Film_id AND genres.id=films_genres.ID_Genre")->fetchAll();
-echo $twig->render('movie.html.twig', [
-'film' => $Request,
-'actors' => $Actors,
-'reals' => $Real,
-'genres' => $Genre,
-'user' => $_SESSION['user_name']
-]);
-var_dump($Genre);
+
+    if(isset($_SESSION['user_name'])){   
+        echo $twig->render('movie.html.twig', [
+        'film' => $Request,
+        'actors' => $Actors,
+        'reals' => $Real,
+        'genres' => $Genre,
+        'user' => $_SESSION['user_name']
+        ]);
+    }else{
+        echo $twig->render('movie.html.twig', [
+        'film' => $Request,
+        'actors' => $Actors,
+        'reals' => $Real,
+        'genres' => $Genre,
+        ]);
+    }
 
 }
 
 function getFilms($twig){
-    var_dump($_SESSION['user_name']);
-try{
-$pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-}
-catch(Exception $e){
-die('Erreur : '.$e->getMessage());
+
+    try{
+        $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
+    }
+    catch(Exception $e){
+        die('Erreur : '.$e->getMessage());
+    }
+
+    if(isset($_SESSION['user_name'])){
+        $allMovies = $pdo->query("SELECT * FROM films")->fetchAll();
+        echo $twig->render('movies.html.twig', ['films' => $allMovies,'user' => $_SESSION['user_name']]);
+    }else{
+        $allMovies = $pdo->query("SELECT * FROM films")->fetchAll();
+        echo $twig->render('movies.html.twig', ['films' => $allMovies]);
+    }
 }
 
-$allMovies = $pdo->query("SELECT * FROM films")->fetchAll();
-echo $twig->render('movies.html.twig', ['films' => $allMovies,'user' => $_SESSION['user_name']]);
-}
+/******************************************************************************/
 
     function registerMovie($twig){
 
-        echo $twig->render('addMovie.html.twig',['user' => $_SESSION['user_name']]);
+        if(isset($_SESSION['user_name'])){
+            echo $twig->render('addMovie.html.twig',['user' => $_SESSION['user_name']]);
+        }else{
+            echo $twig->render('inscription.html.twig');
+        }
 
     }
-
+/*****************************************************************************/
     function insertMovieIntoDatabase($movie,$actors,$twig){
 
         try{
@@ -219,4 +239,35 @@ function addMovie($twig){
         echo $twig->render('addMovie.html.twig', ['errorExist' => "Ce film éxiste déjà",'user' => $_SESSION['user_name']]);
     }
 
+}
+
+
+
+/**************************************************************************/
+
+function searchMovie($twig){
+
+    try{
+        $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
+        }
+    catch(Exception $e){
+        die('Erreur : '.$e->getMessage());
+    }
+
+    $movie_id = $pdo->query("SELECT id 
+                FROM films 
+                WHERE titre = '$_POST[input]'")->fetch();
+    if($movie_id != NULL){
+        getfilm($twig,$movie_id[0]);
+    }else{
+        echo $twig->render('empty.html.twig', ['input' => $_POST['input']]);
+    }
+}
+
+/*******************************************************************************/
+
+function randomMovie($twig){
+
+    $movie=rand(1,25);
+    getfilm($twig,$movie);
 }

@@ -22,13 +22,13 @@
             <div class="container">
                 <a class="navbar-brand" href="/home"><img src="/public/img/yakwaLogo.png" alt="logo" width="200px" height="80px"></a>
                 <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_collapse" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="far fa-caret-square-down"></i>
+                    <i id="square_down" class="far fa-caret-square-down"></i>
                 </a>
                 <div class="collapse navbar-collapse" id="navbar_collapse">
 
                     <!--Barre de recherche -->
-                    <form class="form-inline my-2 my-lg-0">
-                        <input type="search" placeholder="Recherche" aria-label="Search">
+                    <form class="form-inline my-2 my-lg-0" action="/search" method="POST">
+                        <input type="search" name="input" placeholder="Recherche" aria-label="Search">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
 
@@ -103,6 +103,7 @@
 
         </nav>
         
+        {% block noResult %}    {% endblock %}
         {% block formMovie %} {% endblock %}
 
         {% block form %} {% endblock %}

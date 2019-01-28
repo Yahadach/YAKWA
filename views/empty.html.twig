@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block noResult %}
+
+    {% if input != "" %}
+    <h2 id="search_message"> Aucun résultat pour votre recherche: "{{ input }}" </h2>
+        <div id="result_search">
+            <a href="home"><button type="button" class="btn btn-light">Aller à la page d'accueil</button></a>
+            <a href="proposer"><button type="button" class="btn btn-light">Ajouter ce film sur YAKWA</button></a>
+        </div>
+    {% else %}
+        <h2 id="void"> Vous n'avez rien saisi </h2>
+    {% endif %}
+{% endblock %}

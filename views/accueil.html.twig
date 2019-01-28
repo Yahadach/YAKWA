@@ -7,7 +7,7 @@
         {% if babar == 'Salut' %}
             <h2>Salut!</h2>
         {% endif %}
-        <a href="#">Trouver un Film</a>
+        <a href="/films">Trouver un Film</a>
     </div>
 </div>
 {% endblock %} {% block content %}
@@ -181,10 +181,10 @@
         </div>
         <div class="row" id="title-buttons">
             <div class="col-lg-6">
-                <button type="button" class="btn btn-secondary">Rechercher un film</button>
+                <a href="/films"><button type="button" class="btn btn-secondary">Voir les films</button></a>
             </div>
             <div class="col-lg-6">
-                <button type="button" class="btn btn-secondary">Un film au hasard ?</button>
+                <a href="/random"><button type="button" class="btn btn-secondary">Un film au hasard ?</button></a>
             </div>
         </div>
     </div>

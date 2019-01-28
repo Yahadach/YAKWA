@@ -2,13 +2,16 @@
 
 @font-face {
     font-family: "Josefin";
-    src: url("fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
+    src: url("../fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
 }
 
 $navbar_color:#2090f9;
 $black1: #333333;
 
 body {
+    /*#square_down{
+        color: white;
+    }*/
     nav {
         background-color: #333333;
 
@@ -20,6 +23,12 @@ body {
             padding: 10px 15px 10px 15px;
             border-radius: 10px;
         }
+
+        /*#collapsed_items{
+            //display: flex;
+            //flex-direction: column;
+            //align-items: flex-end;
+        }*/
 
         //Barre de recherche
         form {
@@ -44,7 +53,7 @@ body {
                 width: 40px;
                 height: 40px;
 
-                i {
+                i{
                     color: $navbar_color;
                     font-size: 20px;
                 }
@@ -61,8 +70,8 @@ body {
 
         //Menus
         #navbar_collapse {
-            display: flex;
-            justify-content: flex-end;
+            //display: flex;
+            //justify-content: flex-end;
 
             ul {
                 li {
@@ -112,6 +121,7 @@ body {
                 }
 
                 .dropdown-menu {
+                
                     form {
                         margin: 20px 10px 20px 10px;
                         padding: 0;
@@ -153,6 +163,14 @@ body {
         }
     }
 
+    /*h2{
+        color: white;
+        text-align: center;
+        font-size: 45px;
+        background-color: rgba(50, 50, 50, 0.8);
+        margin: 50px;
+    }*/
+
     #inscription {
         display: flex;
         flex-direction: column;
@@ -183,17 +201,31 @@ body {
         flex-direction: column;
         align-items: center;
         background-color: rgba(50, 50, 50, 0.8);
-        margin-top: 20px;
+        background-size: cover;
+        margin-top: 5vh;
+        margin-bottom: 10vh;
         width: 750px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 5px;
+
+        label{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
 
         input {
             width: 500px;
             margin: 20px;
             padding: 13px;
             border-radius: 5px;
+        }
+
+        textarea{
+            width: 400px;
+            margin: 20px;
+            padding: 13px;
         }
 
         #btn{
@@ -232,6 +264,34 @@ body {
         }
     }
 
+    #search_message{
+        display: block;
+        margin-left: auto;
+        margin-top: auto;
+        text-align: center;
+        color: white;
+        font-family: "josefin sans";
+        margin-top: 20vh;
+        font-size: 50px;
+        background-color: rgba(50, 50, 50, 0.8);
+    }
+    #result_search{
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+
+        button{
+            height: 9vh;
+            border-width: 0.5vh;
+            border-color: #333333;
+            font-family: "josefin sans";
+            font-weight: bold;
+        }
+    }
+
     section {
         height: 100vh;
     }
@@ -241,6 +301,7 @@ body {
 
         #header_content {
             .container {
+                //font-family: "josefin sans";
                 min-height: 520px;
                 display: flex;
                 flex-direction: column;
@@ -277,6 +338,7 @@ body {
         background-color: $black1;
 
         h2 {
+            font-family: "josefin sans";
             text-align: center;
             color: white;
             padding-top: 10vh;
@@ -300,6 +362,9 @@ body {
                     justify-content: space-between;
 
                     .carousel_movie_title {
+                        font-family: "josefin sans";
+                        font-weight: bold;
+                        font-size: 20px;
                         text-align: center;
                         color: white;
                     }
@@ -324,6 +389,7 @@ body {
             padding-top: 130px;
 
             p {
+                font-family: "josefin sans";
                 font-size: 25px;
             }
         }
@@ -337,8 +403,10 @@ body {
                 justify-content: center;
 
                 button {
-                    min-height: 60px;
-                    border-radius: 0;
+                    font-family: "josefin sans";
+                    font-weight: bold;
+                    min-height: 65px;
+                    border-radius: 1;
                     border-width: 3px;
                     border-color: #333333;
                 }
@@ -403,7 +471,8 @@ body {
             color: white;
 
             h1 {
-                font-size: 45px;
+                font-family: "josefin sans";
+                font-size: 85px;
             }
         }
 
@@ -434,5 +503,9 @@ body {
         height: 25vh;
         background-color:
             #333333;
+    }
+
+    #square_down{
+        color: white;
     }
 }

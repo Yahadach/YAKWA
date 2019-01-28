@@ -3,7 +3,7 @@
 <form id="movie-form" class="row" method="post" action="processAdd">
 
     <!-- Titre-->
-    <input type="text" name="titre" class="input" minlenght="2" maxlength="20" placeholder="Titre du films*" value="{{inputs.titre}}" required><br><br>
+    <input type="text" name="titre" class="input" minlenght="2" maxlength="20" placeholder="Titre du film*" value="{{inputs.titre}}" required><br><br>
         <span> {{ errorExist }} </span>
 
     <!-- année -->
@@ -20,12 +20,13 @@
 
 
     <!-- Acteur -->
-    <input type="text" name="acteurs" class="input" minlenght="2" maxlength="120" placeholder="Acteur*" value="{{inputs.acteurs}}" required><br><br>
+    <label> Veuillez saisir 3 acteurs ayant joués dans le film et les séparer d'une virgule</label>
+    <input type="text" name="acteurs" class="input" minlenght="2" maxlength="120" placeholder="Acteurs*" value="{{inputs.acteurs}}" required><br><br>
         <span> {{ error }} </span>
 
 
     <!-- Synopsis-->
-    <input type="textarea" name="synopsis" class="input" minlenght="2" maxlength="20" placeholder="Synopsis*" value="{{inputs.synopsis}}" required><br><br>
+    <textarea type="textarea" name="synopsis" class="input" minlenght="2" maxlength="500" placeholder="Synopsis*" value="{{inputs.synopsis}}" required></textarea><br><br>
     <span> {{ errorSynopsis }} </span>
         <input type="submit" id="btn" value="Envoyer">
     </form>
