@@ -1,6 +1,6 @@
 /* Variables */
 @font-face {
-  font-family: "Josefin";
+  font-family: "Josefin", sans-serif;
   src: url("fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
 }
 body {
