@@ -13,6 +13,7 @@ body {
         color: white;
     }*/
     nav {
+        font-family: "Josefin";
         background-color: #333333;
 
         //Logo
@@ -270,7 +271,7 @@ body {
         margin-top: auto;
         text-align: center;
         color: white;
-        font-family: "josefin sans";
+        font-family: "Josefin";
         margin-top: 20vh;
         font-size: 50px;
         background-color: rgba(50, 50, 50, 0.8);
@@ -287,7 +288,7 @@ body {
             height: 9vh;
             border-width: 0.5vh;
             border-color: #333333;
-            font-family: "josefin sans";
+            font-family: "Josefin";
             font-weight: bold;
         }
     }
@@ -301,7 +302,6 @@ body {
 
         #header_content {
             .container {
-                //font-family: "josefin sans";
                 min-height: 520px;
                 display: flex;
                 flex-direction: column;
@@ -338,7 +338,7 @@ body {
         background-color: $black1;
 
         h2 {
-            font-family: "josefin sans";
+            font-family: "Josefin";
             text-align: center;
             color: white;
             padding-top: 10vh;
@@ -362,7 +362,7 @@ body {
                     justify-content: space-between;
 
                     .carousel_movie_title {
-                        font-family: "josefin sans";
+                        font-family: "Josefin";
                         font-weight: bold;
                         font-size: 20px;
                         text-align: center;
@@ -389,7 +389,7 @@ body {
             padding-top: 130px;
 
             p {
-                font-family: "josefin sans";
+                font-family: "Josefin";
                 font-size: 25px;
             }
         }
@@ -403,7 +403,7 @@ body {
                 justify-content: center;
 
                 button {
-                    font-family: "josefin sans";
+                    font-family: "Josefin";
                     font-weight: bold;
                     min-height: 65px;
                     border-radius: 1;
@@ -471,7 +471,7 @@ body {
             color: white;
 
             h1 {
-                font-family: "josefin sans";
+                font-family: "Josefin";
                 font-size: 85px;
             }
         }
