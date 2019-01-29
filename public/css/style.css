@@ -182,6 +182,9 @@ body #header_background {
   height: 100vh;
 }
 body #header_background #header_content .container {
+  font-weight: normal;
+  line-height: 50px;
+  text-shadow: 0 0 10px #222;
   min-height: 520px;
   display: flex;
   flex-direction: column;
