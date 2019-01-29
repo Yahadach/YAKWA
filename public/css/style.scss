@@ -69,6 +69,15 @@ body {
             }
         }
 
+        .navbar-toggler {
+            margin-left: 0;
+            border-color: $navbar_color;
+            border-radius: 5px;
+            background-color: rgba(255, 0, 0, 0);
+            width: 40px;
+            height: 40px;
+        }
+
         #navbar_collapse {
 
             padding: 0px;
@@ -91,11 +100,11 @@ body {
                         padding-top: 30px;
 
                         i {
-                            font-size: 20px;
+                            font-size: 30px;
                         }
 
                         p {
-                            font-size: 14px;
+                            font-size: 12px;
                             text-align: center;
                         }
 
@@ -118,7 +127,7 @@ body {
 
                 a {
                     color: white;
-                    font-size: 14px;
+                    font-size: 12px;
 
                     &:hover {
                         color: $navbar_color;

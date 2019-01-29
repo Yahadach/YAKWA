@@ -48,6 +48,14 @@ body nav form button:hover i {
     height: 55px;
   }
 }
+body nav .navbar-toggler {
+  margin-left: 0;
+  border-color: #2090f9;
+  border-radius: 5px;
+  background-color: rgba(255, 0, 0, 0);
+  width: 40px;
+  height: 40px;
+}
 body nav #navbar_collapse {
   padding: 0px;
   margin: 0px;
@@ -67,10 +75,10 @@ body nav #navbar_collapse ul li a {
   padding-top: 30px;
 }
 body nav #navbar_collapse ul li a i {
-  font-size: 20px;
+  font-size: 30px;
 }
 body nav #navbar_collapse ul li a p {
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
 }
 body nav #navbar_collapse ul li a:hover {
@@ -86,7 +94,7 @@ body nav #navbar_collapse #user_login i {
 }
 body nav #navbar_collapse #user_login a {
   color: white;
-  font-size: 14px;
+  font-size: 12px;
 }
 body nav #navbar_collapse #user_login a:hover {
   color: #2090f9;
