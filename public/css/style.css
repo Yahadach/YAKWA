@@ -8,7 +8,7 @@ body {
   /********************************** LISTE DES FILMS ***************************************/
 }
 body nav {
-  background-color: #333333bb;
+  background-color: #333333;
 }
 body nav .form-inline {
   -ms-flex-flow: unset;
