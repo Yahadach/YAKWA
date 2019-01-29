@@ -130,13 +130,12 @@ body #inscription {
   align-items: center;
   background-color: rgba(50, 50, 50, 0.8);
   margin-top: 20px;
-  width: 350px;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
 }
 body #inscription input {
-  width: 200px;
   margin: 20px;
   padding: 13px;
   border-radius: 5px;
