@@ -70,12 +70,11 @@ body {
         }
 
         .navbar-toggler {
-            margin-left: 0;
-            border-color: $navbar_color;
-            border-radius: 5px;
-            background-color: rgba(255, 0, 0, 0);
-            width: 40px;
-            height: 40px;
+            font-size: 50px;
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            overflow: hidden;  
         }
 
         #navbar_collapse {
@@ -162,7 +161,7 @@ body {
 
                         button {
                             width: 70px;
-                            background-color: $navbar_color;
+                            color: $navbar_color;
                             border: 1.5px solid rgba(0, 0, 0, 0);
 
                             &:hover {
