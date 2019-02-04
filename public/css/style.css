@@ -4,37 +4,20 @@
   src: url("../fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
 }
 body {
-  /*#square_down{
-      color: white;
-  }*/
-  /*h2{
-      color: white;
-      text-align: center;
-      font-size: 45px;
-      background-color: rgba(50, 50, 50, 0.8);
-      margin: 50px;
-  }*/
   /* ------------------------------------------------------------------------------- SECTION CAROUSSEL */
-  /********************************** LISTE DES FILMS ***************************************/
+  /***************************************************** Section Films **********************************************/
+  /***************************************** Page d'un film ********************************************/
 }
 body nav {
   font-family: "Josefin";
   background-color: #333333;
-  /*#collapsed_items{
-      //display: flex;
-      //flex-direction: column;
-      //align-items: flex-end;
-  }*/
 }
-body nav .navbar-brand {
-  background-color: #2090f9;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px 15px 10px 15px;
-  border-radius: 10px;
+body nav .form-inline {
+  -ms-flex-flow: unset;
+  flex-flow: unset;
 }
 body nav form input {
-  height: 40px;
+  height: 20px;
   max-width: 250px;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
@@ -62,33 +45,55 @@ body nav form button:hover {
 body nav form button:hover i {
   color: white;
 }
+@media screen and (min-width: 990px) {
+  body nav .navbar-collapse {
+    height: 55px;
+  }
+}
+body nav .navbar-toggler {
+  margin-left: 0;
+  font-size: 50px;
+  background-color: rgba(255, 0, 0, 0);
+}
+body nav #navbar_collapse {
+  padding: 0px;
+  margin: 0px;
+}
+body nav #navbar_collapse ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 body nav #navbar_collapse ul li a {
+  display: flex;
   width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
+  padding-top: 30px;
 }
 body nav #navbar_collapse ul li a i {
-  font-size: 40px;
+  font-size: 30px;
 }
 body nav #navbar_collapse ul li a p {
+  font-size: 15px;
   text-align: center;
 }
 body nav #navbar_collapse ul li a:hover {
   color: #2090f9;
 }
 body nav #navbar_collapse #user_login {
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
 body nav #navbar_collapse #user_login i {
-  font-size: 40px;
+  font-size: 20px;
   color: white;
 }
 body nav #navbar_collapse #user_login a {
   color: white;
+  font-size: 15px;
 }
 body nav #navbar_collapse #user_login a:hover {
   color: #2090f9;
@@ -107,9 +112,7 @@ body nav #navbar_collapse #user_login .dropdown-menu form {
   justify-content: space-between;
 }
 body nav #navbar_collapse #user_login .dropdown-menu form input {
-  height: 40px;
-  padding-left: 5px;
-  padding-right: 5px;
+  height: 30px;
   border: 1px solid #333333;
   border-radius: 5px;
 }
@@ -127,6 +130,12 @@ body nav #navbar_collapse #user_login .dropdown-menu form button:hover {
   border: 1px solid rgba(0, 0, 0, 0);
   background-color: white;
   border: 1.5px solid #2090f9;
+}
+body #inscription_title {
+  text-align: center;
+  color: white;
+  margin-top: 5vh;
+  background-color: rgba(50, 50, 50, 0.8);
 }
 body #inscription {
   display: flex;
@@ -159,6 +168,7 @@ body #movie-form {
   margin-top: 5vh;
   margin-bottom: 10vh;
   width: 750px;
+  max-height: 90vh;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
@@ -170,14 +180,13 @@ body #movie-form label {
 }
 body #movie-form input {
   width: 500px;
-  margin: 20px;
-  padding: 13px;
+  margin: 10px;
+  padding: 5px;
   border-radius: 5px;
 }
 body #movie-form textarea {
   width: 400px;
-  margin: 20px;
-  padding: 13px;
+  margin: 10px;
 }
 body #movie-form #btn {
   text-align: center;
@@ -242,6 +251,9 @@ body #header_background {
   height: 100vh;
 }
 body #header_background #header_content .container {
+  font-family: "Josefin";
+  line-height: 50px;
+  text-shadow: 0 0 10px #222;
   min-height: 520px;
   display: flex;
   flex-direction: column;
@@ -254,7 +266,6 @@ body #header_background #header_content .container {
 body #header_background #header_content .container a {
   background-color: rgba(0, 0, 0, 0);
   border: 1.5px solid #2090f9;
-  height: 40px;
   width: 200px;
   border-radius: 5px;
   color: #2090f9;
@@ -274,9 +285,11 @@ body #carousel h2 {
   font-family: "Josefin";
   text-align: center;
   color: white;
+  font-size: 4vh;
   padding-top: 10vh;
 }
 body #carousel .carousel-inner .carousel_container {
+  font-family: "Josefin";
   width: 100vw;
   height: 80vh;
   display: flex;
@@ -292,12 +305,26 @@ body #carousel .carousel-inner .carousel_container .carousel_movie {
   flex-direction: column;
   justify-content: space-between;
 }
+body #carousel .carousel-inner .carousel_container .carousel_movie .carousel_movie_image {
+  width: 300px;
+  height: 400px;
+  padding: 0;
+  margin: 0;
+}
+body #carousel .carousel-inner .carousel_container .carousel_movie .carousel_movie_image img {
+  width: 100%;
+}
+body #carousel .carousel-inner .carousel_container .carousel_movie .carousel_movie_image img:hover {
+  box-shadow: 3px 3px 5px black;
+}
 body #carousel .carousel-inner .carousel_container .carousel_movie .carousel_movie_title {
-  font-family: "Josefin";
-  font-weight: bold;
-  font-size: 20px;
   text-align: center;
+  font-size: 2.5vh;
   color: white;
+}
+body #carousel .carousel-inner .carousel_container .carousel_movie .carousel_movie_title:hover {
+  text-decoration: none;
+  text-shadow: 3px 3px 3px black;
 }
 body #about {
   background-color: goldenrod;
@@ -381,8 +408,7 @@ body #movie_container #title_block {
   color: white;
 }
 body #movie_container #title_block h1 {
-  font-family: "Josefin";
-  font-size: 85px;
+  font-size: 45px;
 }
 body #movie_container #movie_block {
   background-color: rgba(51, 51, 51, 0.7);
@@ -397,12 +423,69 @@ body #movie_container #movie_block #description_block #description_list {
 body #movie_container #movie_block #description_block #description_list .description_item {
   list-style-type: none;
   text-align: justify;
+  color: #ffffff;
+  margin-bottom: 2vh;
+}
+body #movie_container #movie_block #trailer {
+  margin-top: 4vh;
+  padding-bottom: 2vh;
+}
+body #movie_container #movie_block #trailer h2 {
+  text-align: center;
   color: white;
-  margin-bottom: 1vh;
+}
+body #movie_container #movie_block #trailer iframe {
+  height: 80vh;
+}
+body #suggestions {
+  background-color: #193056;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+body #suggestions h2 {
+  text-align: center;
+  padding-bottom: 2vh;
+  color: white;
+}
+body #suggestions #suggestion_container {
+  display: flex;
+  justify-content: space-around;
+}
+body #suggestions #suggestion_container .movie_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #suggestions #suggestion_container .movie_item .movie_affiche {
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+body #suggestions #suggestion_container .movie_item .movie_affiche:hover {
+  box-shadow: 3px 3px 5px black;
+}
+body #suggestions #suggestion_container .movie_item .movie_title {
+  text-align: center;
+  margin-top: 2vh;
+  color: white;
+  font-size: 20px;
+}
+body #suggestions #suggestion_container .movie_item .movie_title:hover {
+  text-decoration: none;
+  text-shadow: 3px 3px 3px black;
 }
 body footer {
   height: 25vh;
   background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body footer p {
+  color: #7e7e7e;
+  text-align: center;
+  font-family: "Josefin";
+  font-size: 20px;
 }
 body #square_down {
   color: white;

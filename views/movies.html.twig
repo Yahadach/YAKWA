@@ -1,4 +1,6 @@
-{% extends "base.html.twig" %} {% block title %}FILMS{% endblock %} {% block body %}
+{% extends "base.html.twig" %} 
+{% block title %}FILMS{% endblock %} 
+{% block body %}
 <header class="container-fluid">{% block header %} {{ parent() }} {% endblock %} </header>
 {% block content %}
 <div id="allMovies" class="container-fluid">
@@ -15,4 +17,6 @@
     </div>
 </div>
 
-{% endblock %} {% block footer %} {{ parent() }} {% endblock %} {% endblock %}
+{% endblock %} 
+{% block footer %} {{ parent() }} {% endblock %} 
+{% endblock %}

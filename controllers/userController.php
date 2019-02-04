@@ -35,6 +35,7 @@ function verifConnexion($twig){
 }
 
 function getSession($twig){
+    
 
      if($_SESSION != NULL){ 
         $user_name = $_SESSION['user_name'];
@@ -50,6 +51,7 @@ function getSession($twig){
 
 function deleteSession(){
     session_destroy();
+    header('Location: /home');
 }
 
 function register($twig){

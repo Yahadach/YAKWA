@@ -1,13 +1,9 @@
-{% extends "base.html.twig" %} {% block title %}YAKWA{% endblock %} {% block header %} 
-{{ parent() }}
+{% extends "base.html.twig" %} {% block title %}YAKWA{% endblock %} {% block header %} {{ parent() }}
 <div class="row" id="header_content">
     <div class="container">
-        <img src="public/img/yakwaLogoTest.png" alt="logo yakwa" width="400px" height="160px">
-        <h1>Phrase d'accroche. Bla bla bla bla bla bla bla bla bla bla bla...</h1>
-        {% if babar == 'Salut' %}
-            <h2>Salut!</h2>
-        {% endif %}
-        <a href="/films">Trouver un Film</a>
+        <img src="/public/img/yakwaLogoTest.png" alt="logo yakwa" width="400px" height="160px">
+        <h1>Le site pour tout savoir sur vos films préférés !</h1>
+        <a href="#">Trouver un Film</a>
     </div>
 </div>
 {% endblock %} {% block content %}
@@ -16,7 +12,32 @@
     <h2>A (re)découvrir</h2>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+
+            {% for element in films | batch(3) %} {% if loop.first %}
             <div class="carousel-item active">
+                <div class="carousel_container">
+                    {% for film in element %}
+                    <div class="carousel_movie">
+                        <a class="carousel_movie_image" href="/films/{{film.id}}">
+                            <img class="img-fluid" src="/public/img/affiches/{{film.id}}.jpg" alt={{film.titre}}></a>
+                        <a class="carousel_movie_title" href="/films/{{film.id}}">{{film.titre}}</a>
+                    </div> {% endfor %}
+                </div>
+            </div>
+            {% else %}
+            <div class="carousel-item ">
+                <div class="carousel_container">
+                    {% for film in element %}
+                    <div class="carousel_movie">
+                        <a class="carousel_movie_image" href="/films/{{film.id}}">
+                            <img class="img-fluid" src="/public/img/affiches/{{film.id}}.jpg" alt={{film.titre}}></a>
+                        <a class="carousel_movie_title" href="/films/{{film.id}}">{{film.titre}}</a>
+                    </div> {% endfor %}
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+
+            <!-- <div class="carousel-item active">
                 <div class="carousel_container">
                     <a class="carousel_movie">
                         <img src="public/img/affiches/1.jpg" alt="Les chèvres du pentagone" width="300px" class="carousel_img" id="carousel_img1">
@@ -32,7 +53,7 @@
                     </a>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ">
                 <div class="carousel_container">
                     <a class="carousel_movie">
                         <img src="public/img/affiches/4.jpg" alt="Le cinquième élément" width="300px" class="carousel_img" id="carousel_img4">
@@ -48,7 +69,7 @@
                     </a>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ">
                 <div class="carousel_container">
                     <a class="carousel_movie">
                         <img src="public/img/affiches/7.jpg" alt="L'empire contre attaque" width="300px" class="carousel_img" id="carousel_img7">
@@ -64,7 +85,7 @@
                     </a>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ">
                 <div class="carousel_container">
                     <a class="carousel_movie">
                         <img src="public/img/affiches/10.jpg" alt="Coco" width="300px" class="carousel_img" id="carousel_img10">
@@ -80,7 +101,7 @@
                     </a>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ">
                 <div class="carousel_container">
                     <a class="carousel_movie">
                         <img src="public/img/affiches/13.jpg" alt="Inglourious Basterds" width="300px" class="carousel_img" id="carousel_img13">
@@ -96,7 +117,7 @@
                     </a>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ">
                 <div class="carousel_container">
                     <a class="carousel_movie">
                         <img src="public/img/affiches/16.jpg" alt="Hackers" width="300px" class="carousel_img" id="carousel_img16">
@@ -153,6 +174,7 @@
 
                 </div>
             </div>
+            -->
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

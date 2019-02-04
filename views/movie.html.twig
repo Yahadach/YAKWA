@@ -31,6 +31,24 @@
                 </ul>
             </div>
         </div>
+        <div id="trailer" class="row">
+            <h2 class="col-12">Bande Annonce</h2>
+
+            <iframe class="col-12" src="{{ trailer.chemin }}" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+<div id="suggestions">
+    <h2 class="col-12">Vous pourriez aussi aimer : </h2>
+    <div id="suggestion_container">
+        {% for film in suggestions|slice(0,1) %}
+        <div class="movie_item">
+            <a href="/films/{{film.id}}">
+                <div class="movie_affiche" style="background-image: url('/public/img/affiches/{{film.id}}.jpg')"></div>
+            </a>
+            <a class="movie_title" href="/films/{{film.id}}">{{film.titre}}</a></li>
+        </div>
+        {% endfor %}
     </div>
 </div>
 

@@ -9,10 +9,14 @@ catch(Exception $e){
 die('Erreur : '.$e->getMessage());
 }
 
-$Request = $pdo->query("SELECT * FROM films WHERE films.id = $Film_id" )->fetch();
-$Actors = $pdo->query("SELECT acteurs.nom FROM acteurs,films_acteurs WHERE films_acteurs.ID_Film = $Film_id AND acteurs.id=films_acteurs.ID_Acteur")->fetchAll();
-$Real = $pdo->query("SELECT realisateurs.nom FROM realisateurs,films_realisateurs WHERE films_realisateurs.ID_Film = $Film_id AND realisateurs.id=films_realisateurs.ID_Realisateur")->fetchAll();
-$Genre = $pdo->query("SELECT genres.nom FROM genres,films_genres WHERE films_genres.ID_Film = $Film_id AND genres.id=films_genres.ID_Genre")->fetchAll();
+    $Request = $pdo->query("SELECT * FROM films WHERE films.id = $Film_id" )->fetch();
+   $Actors = $pdo->query("SELECT acteurs.nom  FROM acteurs,films_acteurs WHERE films_acteurs.ID_Film = $Film_id AND acteurs.id=films_acteurs.ID_Acteur")->fetchAll();
+   $Real = $pdo->query("SELECT realisateurs.nom  FROM realisateurs,films_realisateurs WHERE films_realisateurs.ID_Film = $Film_id AND realisateurs.id=films_realisateurs.ID_Realisateur")->fetchAll();
+   $Genre = $pdo->query("SELECT genres.nom  FROM genres,films_genres WHERE films_genres.ID_Film = $Film_id AND genres.id=films_genres.ID_Genre")->fetchAll();
+   $GenreSuggestion = $pdo->query("SELECT genres.nom  FROM genres,films_genres WHERE films_genres.ID_Film = $Film_id AND genres.id=films_genres.ID_Genre")->fetch();
+   $Trailer = $pdo->query("SELECT trailer.chemin  FROM trailer WHERE trailer.id = $Film_id")->fetch();
+   $Suggestion = $pdo->query("SELECT films.titre, films.id, genres.nom  FROM films, genres,films_genres WHERE films_genres.ID_Film = Films.id AND genres.id=films_genres.ID_Genre AND genres.nom = '$GenreSuggestion[0]' AND films.id != $Film_id" )->fetchAll();
+   shuffle($Suggestion);
 
     if(isset($_SESSION['user_name'])){   
         echo $twig->render('movie.html.twig', [
@@ -20,14 +24,17 @@ $Genre = $pdo->query("SELECT genres.nom FROM genres,films_genres WHERE films_gen
         'actors' => $Actors,
         'reals' => $Real,
         'genres' => $Genre,
-        'user' => $_SESSION['user_name']
-        ]);
+        'trailer' => $Trailer,
+        'suggestions' => $Suggestion,
+        'user' => $_SESSION['user_name']]);
     }else{
         echo $twig->render('movie.html.twig', [
         'film' => $Request,
         'actors' => $Actors,
         'reals' => $Real,
         'genres' => $Genre,
+        'trailer' => $Trailer,
+        'suggestions' => $Suggestion
         ]);
     }
 
@@ -260,7 +267,11 @@ function searchMovie($twig){
     if($movie_id != NULL){
         getfilm($twig,$movie_id[0]);
     }else{
-        echo $twig->render('empty.html.twig', ['input' => $_POST['input']]);
+        if(isset($_SESSION['user_name'])){
+            echo $twig->render('empty.html.twig', ['input' => $_POST['input'],'user' => $_SESSION['user_name']]);
+        }else{
+            echo $twig->render('empty.html.twig', ['input' => $_POST['input']]);
+        }
     }
 }
 

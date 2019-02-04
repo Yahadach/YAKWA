@@ -1,20 +1,16 @@
-{% extends "base.html.twig" %}
-{% block form %}
+{% extends "base.html.twig" %} {% block form %}
 
-<h2>Inscrivez-vous pour pouvoir proposer un film à la communauté!</h2>
+<h2 id="inscription_title">Inscrivez-vous pour pouvoir proposer un film à la communauté!</h2>
 
 <form id='inscription' class="row" method="post" action="process">
 
-        <input type="text" name="login" id="login" class="input" placeholder="login*" minlenght="2" maxlength="20" value="{{login}}" required><br><br>
-            {% if dataUser != NULL %}
-                <span> {{ error }} </span>
-            {% endif %}
-        <input type="password" name="mdp" id="mdp" class="input" placeholder="mdp*" minlenght="2" maxlength="20" value="{{mdp}}" required><br><br>
-            {% if mdp|length < 8 %}
-                <span> {{ errorMdp }} </span>
-            {% endif %}
+    <input type="text" name="login" id="login" class="input" placeholder="login*" minlenght="2" maxlength="20" value="{{login}}" required><br><br> {% if dataUser != NULL %}
+    <span> {{ error }} </span> {% endif %}
+    <input type="password" name="mdp" id="mdp" class="input" placeholder="mdp*" minlenght="2" maxlength="20" value="{{mdp}}" required><br><br> {% if mdp|length
+    < 8 %} <span> {{ errorMdp }} </span>
+        {% endif %}
         <input type="email" name="mail" id="mail" class="input" placeholder="Email*"><br><span id='errorEmail'></span><br>
 
         <input type="submit" id="btn" value="Envoyer">
-    </form>
+</form>
 {% endblock %}

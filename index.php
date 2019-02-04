@@ -16,7 +16,8 @@ switch($id){
 
     case "home":
     include "controllers/userController.php";
-    getSession($twig);
+    include "controllers/HOME.php";
+    getHome();
     break;
 
     case "connexion" :
@@ -54,7 +55,6 @@ switch($id){
         include "controllers/userController.php";
         include "controllers/HOME.php";
         createUser($twig);
-        getHome();
     break;
 
     case "films":
@@ -86,8 +86,5 @@ switch($id){
 
     default :
         header('Location: /home');
-    exit;
-    
-        
-        
+    exit;       
 }
