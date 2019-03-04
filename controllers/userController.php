@@ -1,16 +1,7 @@
 <?php
 
 
-function verifConnexion($twig){
-
-
-    try{
-        $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-        }
-    catch(Exception $e){
-        die('Erreur : '.$e->getMessage());
-    }
-        
+function verifConnexion($twig,$pdo){
         
         $saisie_login = $_POST['nom'];
         $saisie_mdp = $_POST['password'];
@@ -31,6 +22,8 @@ function verifConnexion($twig){
                     'user' => $user_name,
                     'session' => $_SESSION
                 ]);
+
+                header('Location: /home');
             
 }
 
@@ -60,14 +53,8 @@ function register($twig){
 
 }
 
-function createUSer($twig){
+function createUSer($twig,$pdo){
 
-    try{
-        $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-        }
-    catch(Exception $e){
-        die('Erreur : '.$e->getMessage());
-    }
 
     $login = $_POST['login'];
     $mdp = $_POST['mdp'];

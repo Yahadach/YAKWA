@@ -21,7 +21,7 @@
         <!-- Navbar -->
         <nav class="row navbar navbar-expand-lg" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="/home"><img src="/public/img/yakwaLogoTest.png" alt="logo" width="100px" height="40px"></a>
+                <a class="navbar-brand" href="/home"><img src="/public/img/yakwaLogoTestB.png" alt="logo" width="100px" height="40px"></a>
                 <a class="navbar-toggler" data-toggle="collapse" data-target="#navbar_collapse" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span style="color:#2090f9;"><i class="far fa-caret-square-down"></i></span>
                 </a>
@@ -30,7 +30,7 @@
 
                     <!--Barre de recherche -->
                     <span><form class="form-inline" action="/search" method="POST">
-                            <input class="form-control" name="input" type="search" placeholder="Recherche" aria-label="Search">
+                            <input id="nav-search" class="form-control" name="input" type="search" placeholder="Recherche" aria-label="Search">
                             <button type="submit"><i class="fas fa-search"></i></button>
                         </form></span>
 
@@ -44,12 +44,7 @@
                             </a>
 
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-video"></i>
-                                <p>Rechercher un film</p>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/proposer">
                                 <i class="far fa-plus-square"></i>
@@ -60,7 +55,7 @@
                         <li id="user_login">
 
                             {# if user.login != null #} {# else #}
-                            <div class="nav-item dropdown">
+                            <div class="nav-item dropdown dropdown-menu-right">
                                 <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="/login">
                                         {% if user is null %}
                                         <i class="far fa-user"></i> Login
@@ -83,9 +78,9 @@
                                         {% endif %} {% if user is null %}
                                         <button type="submit" id="btnSubmit" class="btn btn-primary">Login</button>
                                     </form>
-                                    <center><a href="inscription"><button class="btn btn-primary">Inscription</button></a></center> {% else %}
+                                    <center><a id="register-link" href="inscription"><button id="register-button" class="btn btn-primary">Inscription</button></a></center> {% else %}
                                     <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
-                                        <a href="/deconnexion"> <button class="btn btn-primary"> Deconnexion </button></a>
+                                        <a href="/deconnexion"> <button id="logout-button" class="btn btn-primary"> Deconnexion </button></a>
                                     </div>
                                     {% endif %}
 

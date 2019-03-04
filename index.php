@@ -1,6 +1,7 @@
 <?php
 
 require("models/twig.php");
+require("models/database.php");
 
 $uri = $_SERVER['REQUEST_URI'];
 $uriExplode = explode( "/" , $uri);
@@ -22,7 +23,8 @@ switch($id){
 
     case "connexion" :
         include "controllers/userController.php";
-        verifConnexion($twig);
+        header('Location: /home');
+        verifConnexion($twig,$pdo);
     break;
 
     case "deconnexion" :
@@ -42,7 +44,7 @@ switch($id){
     case "processAdd":
         include "controllers/userController.php";
         include "controllers/filmsControler.php";
-        addMovie($twig);
+        addMovie($twig,$pdo);
         //getSession($twig);
     break;
 
@@ -54,7 +56,7 @@ switch($id){
     case "process":
         include "controllers/userController.php";
         include "controllers/HOME.php";
-        createUser($twig);
+        createUser($twig,$pdo);
     break;
 
     case "films":
@@ -62,13 +64,13 @@ switch($id){
 
         if(isset($uriExplode[2])) {
         include "controllers/filmsControler.php";
-        getFilm($twig,$uriExplode[2]);
+        getFilm($twig,$uriExplode[2],$pdo);
         //getSession($twig);
         }
         else {
         include "controllers/filmsControler.php";
         //getSession($twig);
-        getFilms($twig);
+        getFilms($twig,$pdo);
         //getSession($twig);
         }
     break;

@@ -10,10 +10,21 @@ $black1: rgb(51,
 51,
 51);
 body {
+    a:hover{
+        text-decoration: none;
+    }
     nav {
         font-family: "Josefin";
         background-color: #333333;
         //Barre de recherche
+        #nav-search{
+            background-color: #333333;
+            color: white;
+            border-radius: 2px;
+            border-width: 0.25vh;
+            border-color: white;
+            box-shadow: none;
+        }
         .form-inline {
             -ms-flex-flow: unset;
             flex-flow: unset;
@@ -22,7 +33,7 @@ body {
             input {
                 height: 20px;
                 max-width: 250px;
-                border: 1px solid rgba(0, 0, 0, 0);
+                border: 1px solid rgba(250, 96, 96, 0);
                 border-radius: 5px;
                 margin-right: 10px;
                 &:focus {
@@ -37,14 +48,17 @@ body {
                 background-color: rgba(255, 0, 0, 0);
                 width: 40px;
                 height: 40px;
+                border-color: white;
                 i {
-                    color: $navbar_color;
+                    color: white;
                     font-size: 20px;
                 }
-                &:hover {
-                    border-color: white;
-                    i {
-                        color: white;
+
+                &:hover{
+                    cursor: pointer;
+                    border-color: #2090f9;
+                    i{
+                        color: #2090f9;
                     }
                 }
             }
@@ -108,6 +122,18 @@ body {
                         }
                     }
                 }
+
+                #navbarDropdown{
+                    margin-left: 33vh;
+
+                    @media screen and (min-width: 991px) and (max-width: 1257px) {
+                        margin-left: 10vh;
+                    }
+
+                    @media screen and (max-width: 991px) {
+                        margin-left: 0;
+                    }
+                }
                 .dropdown-menu {
                     form {
                         margin: 20px 10px 20px 10px;
@@ -129,7 +155,6 @@ body {
                         }
                         button {
                             width: 70px;
-                            background-color: $navbar_color;
                             border: 1.5px solid rgba(0, 0, 0, 0);
                             &:hover {
                                 color: $navbar_color;
@@ -137,6 +162,27 @@ body {
                                 background-color: white;
                                 border: 1.5px solid $navbar_color;
                             }
+                        }
+                    }
+                    #register-link{
+                        text-decoration-line: none;    
+                        #register-button{
+                            &:hover {
+                                color: #2090f9;
+                                border: 1px solid rgba(0, 0, 0, 0);
+                                background-color: white;
+                                border: 1.5px solid $navbar_color;
+                            }
+                        }
+                    }
+
+                    #logout-button{
+
+                        background-color: #2090f9;
+                        
+                        &:hover{
+                            background-color: white;
+                            color: #2090f9;
                         }
                     }
                 }
@@ -171,6 +217,17 @@ body {
             font-weight: bold;
         }
     }
+
+    #addmovie-title{
+        font-family: "Josefin";
+        color: white;
+        margin-top: 7vh;
+        background-color: rgba(50, 50, 50, 0.8);
+        width: 115vh;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
     #movie-form {
         display: flex;
         flex-direction: column;
@@ -180,7 +237,7 @@ body {
         margin-top: 5vh;
         margin-bottom: 10vh;
         width: 750px;
-        max-height: 90vh;
+        max-height: 61vh;
         margin-left: auto;
         margin-right: auto;
         border-radius: 5px;
@@ -190,9 +247,9 @@ body {
             text-align: center;
         }
         input {
-            width: 500px;
-            margin: 10px;
-            padding: 5px;
+            width: 50vh;
+            margin: 1vh;
+            padding: 0.5vh;
             border-radius: 5px;
         }
         textarea {
@@ -200,7 +257,19 @@ body {
             margin: 10px;
         }
         #btn {
+            width: 10vh;
             text-align: center;
+            font-family: "Josefin";
+            font-size: 2vh;
+            color: white;
+            border: none;
+            background-color: #2090f9;
+        }
+
+        #btn:hover{
+            cursor: pointer;
+            background-color: white;
+            color: #2090f9;
         }
         span {
             color: crimson;
@@ -233,7 +302,9 @@ body {
     #search_message {
         display: block;
         margin-left: auto;
+        margin-right: auto;
         margin-top: auto;
+        width: 90vh;
         text-align: center;
         color: white;
         font-family: "Josefin";
@@ -242,25 +313,35 @@ body {
         background-color: rgba(50, 50, 50, 0.8);
     }
     #result_search {
-        margin-top: 10vh;
+        margin-top: 8vh;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
         button {
-            height: 9vh;
-            border-width: 0.5vh;
-            border-color: #333333;
+            height: 6vh;
+            margin: 3vh;
             font-family: "Josefin";
-            font-weight: bold;
+            font-size: 2vh;
+            background-color: #2090f9;
+            color: white;
+
+            &:hover{
+                background-color: white;
+                color: #2090f9;
+                border-color: #2090f9;
+            }
         }
     }
     section {
         height: 100vh;
     }
+
+    
     #header_background {
         height: 100vh;
+
         #header_content {
             .container {
                 font-family: "Josefin";
@@ -275,17 +356,27 @@ body {
                 padding-bottom: 50px;
                 color: white;
                 a {
-                    background-color: rgba(0, 0, 0, 0);
+                    background-color: #2090f9;
                     border: 1.5px solid $navbar_color;
                     width: 200px;
                     border-radius: 5px;
-                    color: $navbar_color;
+                    color: white;
                     text-align: center;
                     font-size: 20px;
-                    &:hover {
-                        background-color: $navbar_color;
-                        color: white;
+
+                    &:hover{
                         text-decoration: none;
+                        background-color: white;
+                        color: #2090f9;
+                    }
+                }
+
+                #yakwa-logo{
+
+                    @media screen and (max-width: 400px) {
+                        margin-top: -4vh;
+                        width: 230px;
+                        height: 110px;
                     }
                 }
             }
@@ -300,7 +391,7 @@ body {
             font-family: "Josefin";
             text-align: center;
             color: white;
-            font-size: 4vh;
+            font-size: 7vh;
             padding-top: 10vh;
         }
         .carousel-inner {
@@ -314,7 +405,7 @@ body {
                 padding-left: 10vw;
                 padding-right: 10vw;
                 .carousel_movie {
-                    height: 500px;
+                    height: 450px;
                     width: 300px;
                     display: flex;
                     flex-direction: column;
@@ -324,11 +415,9 @@ body {
                         height: 400px;
                         padding: 0;
                         margin: 0;
-                        img {
-                            width: 100%;
-                            &:hover {
-                                box-shadow: 3px 3px 5px black;
-                            }
+                        background-size: cover;
+                        &:hover {
+                            box-shadow: 3px 3px 5px black;
                         }
                     }
                     .carousel_movie_title {
@@ -344,35 +433,130 @@ body {
             }
         }
     }
-    #about {
-        background-color: goldenrod;
-        #title-about {
-            padding-top: 50px;
+    
+    //Petit Carousel
+    #mini_carousel {
+        display: none;
+    }
+    
+    // Media Query pour les carousels
+    @media screen and (max-width: 1220px) {
+        #mini_carousel {
+            display: block;
+            height: 100vh;
+            background-color: $black1;
             h2 {
                 font-family: "Josefin";
-                font-size: 60px;
+                text-align: center;
+                color: white;
+                font-size: 4vh;
+                padding-top: 10vh;
+            }
+            .carousel-inner {
+                .carousel_container {
+                    font-family: "Josefin";
+                    width: 100vw;
+                    height: 80vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-left: 10vw;
+                    padding-right: 10vw;
+                    .carousel_movie {
+                        height: 450px;
+                        width: 300px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .carousel_movie_image {
+                            width: 300px;
+                            height: 400px;
+                            padding: 0;
+                            margin: 0;
+                            background-size: cover;
+                            &:hover {
+                                box-shadow: 3px 3px 5px black;
+                            }
+                        }
+                        .carousel_movie_title {
+                            text-align: center;
+                            font-size: 2.5vh;
+                            color: white;
+                            &:hover {
+                                text-decoration: none;
+                                text-shadow: 3px 3px 3px black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #carousel {
+            display: none;
+        }
+    }
+    
+    #about {
+        background-color: #193056;
+        color: white;
+        #title-about {
+            padding-top: 10vh;
+            h2 {
+                font-family: "Josefin";
+                font-size: 6.5vh;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 5.3vh;
+                }
+
+                @media screen and (max-width: 506px) {
+                    font-size: 3.8vh;
+                }
             }
         }
         #title-description {
-            padding-top: 130px;
+            padding-top: 5vh;
             p {
                 font-family: "Josefin";
-                font-size: 25px;
+                font-size: 2.5vh;
+
+                @media screen and (min-width: 768px) and (max-width: 992px) {
+                    font-size: 2.25vh;
+                }
+
+                @media screen and (min-width: 489px) and (max-width: 768px) {
+                    font-size: 1.75vh;
+                }
+
+                @media screen and (max-width: 489px) {
+                    font-size: 1.5vh;
+                }
             }
         }
         #title-buttons {
-            padding-top: 100px;
+            padding-top: 50px;
             .col-lg-6 {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 button {
+                    margin: 2vh;
                     font-family: "Josefin";
                     font-weight: bold;
-                    min-height: 65px;
-                    border-radius: 1;
-                    border-width: 3px;
-                    border-color: #333333;
+                    height: 6vh;
+                    background-color: #2090f9;
+                    border: none;
+
+                    &:hover{
+                        text-decoration: none;
+                        background-color: white;
+                        color: #2090f9;
+                    }
+
+                    @media screen and (max-width: 475px) {
+                        margin: 0px;
+                        font-size: 1.8vh;
+                    }
                 }
             }
         }
@@ -380,7 +564,7 @@ body {
     /***************************************************** Section Films **********************************************/
     #allMovies {
         min-height: 100vh;
-        background-color: rgb(126, 126, 126);
+        background-color: #193056;
         margin: 0;
         padding: 0;
         #movie_list {
@@ -417,6 +601,7 @@ body {
     /***************************************** Page d'un film ********************************************/
     #movie_container {
         background-size: cover;
+        background-position: center;
         padding-top: 5vh;
         padding-bottom: 5vh;
         #title_block {
@@ -497,7 +682,7 @@ body {
         }
     }
     footer {
-        height: 25vh;
+        height: 15vh;
         background-color: #333333;
         display: flex;
         align-items: center;
@@ -506,7 +691,16 @@ body {
             color: rgb(126, 126, 126);
             text-align: center;
             font-family: "Josefin";
-            font-size: 20px;
+            font-size: 2vh;
+
+            @media screen and (min-width: 376px) and (max-width: 600px) {
+                margin-top: 1vh;
+                font-size: 1.65vh;
+            }
+
+            @media screen and (max-width: 376px) {
+                font-size: 1.4vh;
+            }
         }
     }
     #square_down {

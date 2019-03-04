@@ -1,13 +1,7 @@
 <?php
 
-function getFilm($twig,$Film_id){
+function getFilm($twig,$Film_id,$pdo){
 
-try{
-$pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-}
-catch(Exception $e){
-die('Erreur : '.$e->getMessage());
-}
 
     $Request = $pdo->query("SELECT * FROM films WHERE films.id = $Film_id" )->fetch();
    $Actors = $pdo->query("SELECT acteurs.nom  FROM acteurs,films_acteurs WHERE films_acteurs.ID_Film = $Film_id AND acteurs.id=films_acteurs.ID_Acteur")->fetchAll();
@@ -40,14 +34,7 @@ die('Erreur : '.$e->getMessage());
 
 }
 
-function getFilms($twig){
-
-    try{
-        $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-    }
-    catch(Exception $e){
-        die('Erreur : '.$e->getMessage());
-    }
+function getFilms($twig,$pdo){
 
     if(isset($_SESSION['user_name'])){
         $allMovies = $pdo->query("SELECT * FROM films")->fetchAll();
@@ -70,14 +57,7 @@ function getFilms($twig){
 
     }
 /*****************************************************************************/
-    function insertMovieIntoDatabase($movie,$actors,$twig){
-
-        try{
-            $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-            }
-        catch(Exception $e){
-            die('Erreur : '.$e->getMessage());
-        }
+    function insertMovieIntoDatabase($movie,$actors,$twig,$pdo){
 
         // 1. insertion du film dans la base ("",titre,annee,synopsis)
         $Request = $pdo->query("INSERT INTO films VALUES ('','$movie[titre]','$movie[annee]','$movie[synopsis]')");
@@ -170,14 +150,7 @@ function getFilms($twig){
 
     /****************************************************/
 
-function addMovie($twig){
-
-    try{
-        $pdo = new PDO('mysql:host=localhost;dbname=yakwa;charset=utf8', 'root', '');
-        }
-    catch(Exception $e){
-        die('Erreur : '.$e->getMessage());
-    }
+function addMovie($twig,$pdo){
 
     $acteur = $_POST['acteurs'];
     $error_state=true;
@@ -209,7 +182,7 @@ function addMovie($twig){
                             // insertMovieIntoDatabase($realisator,$actors,$movie,$user,$genre)
                             $actors_list = preg_split('/,+/', $_POST['acteurs']);
 
-                            insertMovieIntoDatabase($_POST,$actors_list,$twig);
+                            insertMovieIntoDatabase($_POST,$actors_list,$twig,$pdo);
                             //var_dump($actors_list);
                             //$Request = $pdo->query("INSERT INTO acteurs VALUES ('','$acteur')");
                             //echo $twig->render('addMovie.html.twig');
@@ -261,16 +234,22 @@ function searchMovie($twig){
         die('Erreur : '.$e->getMessage());
     }
 
+    if($_POST['input'] == ""){
+        header('Location: /home');
+    }
+
     $movie_id = $pdo->query("SELECT id 
                 FROM films 
                 WHERE titre = '$_POST[input]'")->fetch();
     if($movie_id != NULL){
-        getfilm($twig,$movie_id[0]);
+        getfilm($twig,$movie_id[0],$pdo);
     }else{
         if(isset($_SESSION['user_name'])){
             echo $twig->render('empty.html.twig', ['input' => $_POST['input'],'user' => $_SESSION['user_name']]);
         }else{
-            echo $twig->render('empty.html.twig', ['input' => $_POST['input']]);
+            echo $twig->render('empty
+            
+            .html.twig', ['input' => $_POST['input']]);
         }
     }
 }
